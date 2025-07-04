@@ -3,21 +3,21 @@ import { Award, MapPin, Clock, Phone, Mail } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-16 sm:py-20 bg-gradient-to-br from-black via-gray-900 to-prussian-blue relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-20 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/6 w-32 sm:w-64 h-32 sm:h-64 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-prussian-blue/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/4 left-1/6 w-32 sm:w-64 h-32 sm:h-64 bg-prussian-blue/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-black/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Meet Dr. Serena Blake
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-white to-gray-300 mx-auto mb-4 sm:mb-6"></div>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+            <div className="w-24 h-1 bg-gradient-to-r from-prussian-blue to-black mx-auto mb-4 sm:mb-6"></div>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Licensed Clinical Psychologist dedicated to your mental wellness journey
             </p>
           </div>
@@ -27,7 +27,7 @@ const About = () => {
             <div className="animate-slide-in group">
               <div className="relative transform-gpu perspective-1000">
                 {/* Main image container with 3D effect */}
-                <div className="relative bg-gradient-to-br from-blue-500/20 via-white/10 to-prussian-blue/30 p-1 rounded-3xl transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-y-12 group-hover:shadow-2xl group-hover:shadow-prussian-blue/30">
+                <div className="relative bg-gradient-to-br from-blue-500/20 via-white/30 to-prussian-blue/20 p-1 rounded-3xl transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-y-12 group-hover:shadow-2xl group-hover:shadow-prussian-blue/30">
                   {/* Blue decorative background similar to uploaded image */}
                   <div className="absolute -top-4 -left-4 w-24 sm:w-32 h-16 sm:h-20 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl transform -rotate-12 group-hover:rotate-6 transition-transform duration-500"></div>
                   <div className="absolute -bottom-6 -right-6 w-32 sm:w-40 h-20 sm:h-24 bg-gradient-to-r from-prussian-blue to-blue-500 rounded-2xl transform rotate-12 group-hover:-rotate-6 transition-transform duration-500"></div>
@@ -44,7 +44,7 @@ const About = () => {
                 </div>
 
                 {/* Floating credential badge */}
-                <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white/10 backdrop-blur-lg rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 transform transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 group-hover:rotate-3">
+                <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-gradient-to-br from-black via-prussian-blue/80 to-black backdrop-blur-lg rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 transform transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 group-hover:rotate-3">
                   <div className="flex items-center space-x-3">
                     <Award className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400 group-hover:animate-bounce" />
                     <div>
@@ -58,7 +58,7 @@ const About = () => {
 
             {/* About Content with 3D cards */}
             <div className="space-y-6 sm:space-y-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-white/20 transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-prussian-blue/30 hover:rotate-1">
+              <div className="bg-gradient-to-br from-black via-prussian-blue/80 to-black backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-white/20 transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-prussian-blue/30 hover:rotate-1">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 transition-colors duration-300 hover:text-blue-300">
                   Dr. Serena Blake, PsyD
                 </h3>
@@ -76,7 +76,7 @@ const About = () => {
 
               {/* Contact Info Cards with 3D effects */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl shadow-lg border border-white/20 transform transition-all duration-500 hover:scale-110 hover:-translate-y-4 hover:rotate-2 hover:shadow-2xl hover:shadow-prussian-blue/30 group">
+                <div className="bg-gradient-to-br from-black via-prussian-blue/80 to-black backdrop-blur-lg p-4 sm:p-6 rounded-xl shadow-lg border border-white/20 transform transition-all duration-500 hover:scale-110 hover:-translate-y-4 hover:rotate-2 hover:shadow-2xl hover:shadow-prussian-blue/30 group">
                   <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-blue-400 mb-3 group-hover:animate-bounce transition-colors duration-300 group-hover:text-white" />
                   <h4 className="font-semibold text-white mb-2 text-sm sm:text-base group-hover:text-blue-300 transition-colors duration-300">Location</h4>
                   <p className="text-gray-300 text-xs sm:text-sm group-hover:text-gray-100 transition-colors duration-300">
@@ -85,19 +85,19 @@ const About = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl shadow-lg border border-white/20 transform transition-all duration-500 hover:scale-110 hover:-translate-y-4 hover:-rotate-2 hover:shadow-2xl hover:shadow-prussian-blue/30 group">
+                <div className="bg-gradient-to-br from-black via-prussian-blue/80 to-black backdrop-blur-lg p-4 sm:p-6 rounded-xl shadow-lg border border-white/20 transform transition-all duration-500 hover:scale-110 hover:-translate-y-4 hover:-rotate-2 hover:shadow-2xl hover:shadow-prussian-blue/30 group">
                   <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-blue-400 mb-3 group-hover:animate-bounce transition-colors duration-300 group-hover:text-white" />
                   <h4 className="font-semibold text-white mb-2 text-sm sm:text-base group-hover:text-blue-300 transition-colors duration-300">Phone</h4>
                   <p className="text-gray-300 text-xs sm:text-sm group-hover:text-gray-100 transition-colors duration-300">(323) 555-0192</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl shadow-lg border border-white/20 transform transition-all duration-500 hover:scale-110 hover:-translate-y-4 hover:rotate-1 hover:shadow-2xl hover:shadow-prussian-blue/30 group">
+                <div className="bg-gradient-to-br from-black via-prussian-blue/80 to-black backdrop-blur-lg p-4 sm:p-6 rounded-xl shadow-lg border border-white/20 transform transition-all duration-500 hover:scale-110 hover:-translate-y-4 hover:rotate-1 hover:shadow-2xl hover:shadow-prussian-blue/30 group">
                   <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-blue-400 mb-3 group-hover:animate-bounce transition-colors duration-300 group-hover:text-white" />
                   <h4 className="font-semibold text-white mb-2 text-sm sm:text-base group-hover:text-blue-300 transition-colors duration-300">Email</h4>
                   <p className="text-gray-300 text-xs sm:text-sm group-hover:text-gray-100 transition-colors duration-300">serena@blakepsychology.com</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl shadow-lg border border-white/20 transform transition-all duration-500 hover:scale-110 hover:-translate-y-4 hover:-rotate-1 hover:shadow-2xl hover:shadow-prussian-blue/30 group">
+                <div className="bg-gradient-to-br from-black via-prussian-blue/80 to-black backdrop-blur-lg p-4 sm:p-6 rounded-xl shadow-lg border border-white/20 transform transition-all duration-500 hover:scale-110 hover:-translate-y-4 hover:-rotate-1 hover:shadow-2xl hover:shadow-prussian-blue/30 group">
                   <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-blue-400 mb-3 group-hover:animate-bounce transition-colors duration-300 group-hover:text-white" />
                   <h4 className="font-semibold text-white mb-2 text-sm sm:text-base group-hover:text-blue-300 transition-colors duration-300">Office Hours</h4>
                   <div className="text-gray-300 text-xs sm:text-sm space-y-1 group-hover:text-gray-100 transition-colors duration-300">
