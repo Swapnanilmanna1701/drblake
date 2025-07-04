@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -74,6 +73,13 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			perspective: {
+				'1000': '1000px',
+				'2000': '2000px',
+			},
+			transformStyle: {
+				'preserve-3d': 'preserve-3d',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -118,6 +124,10 @@ export default {
 				'glow': {
 					'0%, 100%': { boxShadow: '0 0 20px rgba(0, 49, 83, 0.3)' },
 					'50%': { boxShadow: '0 0 40px rgba(0, 49, 83, 0.6)' }
+				},
+				'rotate-y': {
+					'0%': { transform: 'rotateY(0deg)' },
+					'100%': { transform: 'rotateY(360deg)' }
 				}
 			},
 			animation: {
@@ -129,7 +139,8 @@ export default {
 				'scroll': 'scroll 30s linear infinite',
 				'pulse': 'pulse 3s ease-in-out infinite',
 				'bounce-slow': 'bounce-slow 3s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite'
+				'glow': 'glow 2s ease-in-out infinite',
+				'rotate-y': 'rotate-y 3s ease-in-out infinite'
 			}
 		}
 	},
