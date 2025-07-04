@@ -7,9 +7,27 @@ import { Textarea } from './ui/textarea';
 import { Checkbox } from './ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  reason: string;
+  preferredTime: string;
+  agreeToContact: boolean;
+}
+
+interface FormErrors {
+  name?: string;
+  phone?: string;
+  email?: string;
+  reason?: string;
+  preferredTime?: string;
+  agreeToContact?: string;
+}
+
 const Contact = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
     email: '',
@@ -17,11 +35,11 @@ const Contact = () => {
     preferredTime: '',
     agreeToContact: false
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: FormErrors = {};
     
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
@@ -38,7 +56,7 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validateForm()) return;
@@ -64,7 +82,7 @@ const Contact = () => {
     }, 1000);
   };
 
-  const handleChange = (field, value) => {
+  const handleChange = (field: keyof FormData, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));
@@ -72,31 +90,31 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 bg-gray-50 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Get In Touch
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-black to-prussian-blue mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to begin your journey to mental wellness? Reach out today for a free consultation
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Information */}
             <div className="animate-slide-in">
-              <div className="bg-gradient-to-br from-prussian-blue to-black rounded-3xl p-8 text-white h-full">
-                <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
+              <div className="bg-gradient-to-br from-prussian-blue to-black rounded-3xl p-6 sm:p-8 text-white h-full">
+                <h3 className="text-xl sm:text-2xl font-bold mb-8">Contact Information</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <MapPin className="h-6 w-6 mt-1 text-gray-300" />
+                    <MapPin className="h-6 w-6 mt-1 text-gray-300 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold mb-1">Office Location</h4>
-                      <p className="text-gray-300">
+                      <p className="text-gray-300 text-sm sm:text-base">
                         1287 Maplewood Drive<br />
                         Los Angeles, CA 90026
                       </p>
@@ -104,26 +122,26 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Phone className="h-6 w-6 mt-1 text-gray-300" />
+                    <Phone className="h-6 w-6 mt-1 text-gray-300 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold mb-1">Phone</h4>
-                      <p className="text-gray-300">(323) 555-0192</p>
+                      <p className="text-gray-300 text-sm sm:text-base">(323) 555-0192</p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Mail className="h-6 w-6 mt-1 text-gray-300" />
+                    <Mail className="h-6 w-6 mt-1 text-gray-300 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="text-gray-300">serena@blakepsychology.com</p>
+                      <p className="text-gray-300 text-sm sm:text-base">serena@blakepsychology.com</p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Clock className="h-6 w-6 mt-1 text-gray-300" />
+                    <Clock className="h-6 w-6 mt-1 text-gray-300 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold mb-1">Office Hours</h4>
-                      <div className="text-gray-300 space-y-1">
+                      <div className="text-gray-300 space-y-1 text-sm sm:text-base">
                         <p>In-person: Tue & Thu, 10 AM–6 PM</p>
                         <p>Virtual: Mon, Wed & Fri, 1 PM–5 PM</p>
                       </div>
@@ -131,12 +149,12 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                <div className="mt-8 p-4 sm:p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
                   <div className="flex items-center space-x-3 mb-3">
-                    <CheckCircle className="h-6 w-6 text-green-400" />
-                    <span className="font-semibold">Free Consultation Available</span>
+                    <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
+                    <span className="font-semibold text-sm sm:text-base">Free Consultation Available</span>
                   </div>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-300 text-xs sm:text-sm">
                     Schedule a complimentary 15-minute consultation to see if we're a good fit for your therapeutic journey.
                   </p>
                 </div>
@@ -145,8 +163,8 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -218,8 +236,8 @@ const Contact = () => {
                   <div className="flex items-start space-x-3">
                     <Checkbox
                       checked={formData.agreeToContact}
-                      onCheckedChange={(checked) => handleChange('agreeToContact', checked)}
-                      className={`${errors.agreeToContact ? 'border-red-500' : ''} mt-1`}
+                      onCheckedChange={(checked) => handleChange('agreeToContact', checked as boolean)}
+                      className={`${errors.agreeToContact ? 'border-red-500' : ''} mt-1 flex-shrink-0`}
                     />
                     <div>
                       <label className="text-sm text-gray-700 leading-relaxed">

@@ -28,47 +28,53 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+    <section id="services" className="py-16 sm:py-20 bg-gradient-to-br from-black via-gray-900 to-prussian-blue relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/6 w-32 sm:w-64 h-32 sm:h-64 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-prussian-blue/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Specialized Services
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-black to-prussian-blue mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600">
+          <div className="w-24 h-1 bg-gradient-to-r from-white to-gray-300 mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-lg sm:text-xl text-gray-300 px-4">
             Comprehensive mental health services tailored to your unique needs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-prussian-blue/20 overflow-hidden animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-              <div className="relative h-48 overflow-hidden">
+            <Card key={index} className="group bg-white/10 backdrop-blur-lg border-2 border-white/20 hover:border-white/40 hover:shadow-2xl hover:shadow-prussian-blue/20 transition-all duration-500 overflow-hidden animate-fade-in transform hover:scale-105 hover:-translate-y-2" style={{ animationDelay: `${index * 0.2}s` }}>
+              <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img 
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute top-4 left-4 bg-white p-3 rounded-full shadow-lg">
-                  <service.icon className="h-6 w-6 text-prussian-blue" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/50 transition-all duration-300"></div>
+                <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm p-3 rounded-full shadow-lg border border-white/30 group-hover:bg-white/30 transition-all duration-300">
+                  <service.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
-                <div className="absolute bottom-4 right-4 bg-white/90 px-3 py-1 rounded-full">
+                <div className="absolute bottom-4 right-4 bg-green-500/20 backdrop-blur-sm border border-green-400/30 px-3 py-1 rounded-full">
                   <div className="flex items-center space-x-1">
-                    <DollarSign className="h-4 w-4 text-green-600" />
-                    <span className="text-sm font-semibold text-gray-800">{service.price}</span>
+                    <DollarSign className="h-3 w-3 sm:h-4 sm:w-4 text-green-400" />
+                    <span className="text-xs sm:text-sm font-semibold text-green-300">{service.price}</span>
                   </div>
                 </div>
               </div>
               
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-prussian-blue transition-colors duration-300">
+              <CardHeader className="pb-2 sm:pb-4">
+                <CardTitle className="text-lg sm:text-xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               
-              <CardContent>
-                <CardDescription className="text-gray-600 leading-relaxed">
+              <CardContent className="pt-0">
+                <CardDescription className="text-gray-300 leading-relaxed text-sm sm:text-base group-hover:text-gray-200 transition-colors duration-300">
                   {service.description}
                 </CardDescription>
               </CardContent>
@@ -76,13 +82,13 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <div className="bg-gray-50 rounded-2xl p-8 max-w-2xl mx-auto border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Insurance & Payment</h3>
-            <p className="text-gray-600 mb-4">
+        <div className="text-center mt-8 sm:mt-12">
+          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto border border-white/20 hover:border-white/30 transition-all duration-300 mx-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Insurance & Payment</h3>
+            <p className="text-gray-300 mb-4 text-sm sm:text-base">
               While I don't accept insurance directly, I provide superbills for easy self-submission to your insurance provider.
             </p>
-            <p className="text-gray-700 font-semibold">
+            <p className="text-gray-200 font-semibold text-sm sm:text-base">
               Both in-person and virtual sessions available
             </p>
           </div>
