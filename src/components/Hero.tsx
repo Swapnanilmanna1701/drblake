@@ -52,7 +52,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight px-2 drop-shadow-2xl">
             Your Journey to
-            <span className="block bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-gradient-text">
+            <span className="block bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-pulse bg-300% drop-shadow-lg">
               Mental Wellness
             </span> 
             Starts Here
@@ -82,17 +82,43 @@ const Hero = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center px-4">
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/30 hover:bg-white/20 transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 shadow-xl hover:shadow-2xl glossy-card">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-2 drop-shadow-lg">8+</div>
-              <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Years Experience</div>
+            <div className="hero-stat-card group">
+              <div className="hero-stat-inner">
+                <div className="hero-stat-front">
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2 drop-shadow-lg">8+</div>
+                  <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Years Experience</div>
+                </div>
+                <div className="hero-stat-back">
+                  <div className="text-white font-semibold mb-2">Professional Excellence</div>
+                  <div className="text-gray-300 text-xs">Dedicated to mental health</div>
+                </div>
+              </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/30 hover:bg-white/20 transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 shadow-xl hover:shadow-2xl glossy-card">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-2 drop-shadow-lg">500+</div>
-              <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Client Sessions</div>
+            
+            <div className="hero-stat-card group">
+              <div className="hero-stat-inner">
+                <div className="hero-stat-front">
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2 drop-shadow-lg">500+</div>
+                  <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Client Sessions</div>
+                </div>
+                <div className="hero-stat-back">
+                  <div className="text-white font-semibold mb-2">Proven Results</div>
+                  <div className="text-gray-300 text-xs">Transforming lives daily</div>
+                </div>
+              </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/30 hover:bg-white/20 transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 shadow-xl hover:shadow-2xl glossy-card">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-2 drop-shadow-lg">100%</div>
-              <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Confidential</div>
+            
+            <div className="hero-stat-card group">
+              <div className="hero-stat-inner">
+                <div className="hero-stat-front">
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-pink-400 to-red-500 bg-clip-text text-transparent mb-2 drop-shadow-lg">100%</div>
+                  <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Confidential</div>
+                </div>
+                <div className="hero-stat-back">
+                  <div className="text-white font-semibold mb-2">Complete Privacy</div>
+                  <div className="text-gray-300 text-xs">Your trust is sacred</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
