@@ -73,51 +73,64 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Animated scrolling testimonials */}
+        {/* Enhanced animated scrolling testimonials */}
         <div className="relative">
           <div className="flex space-x-4 sm:space-x-6 animate-scroll hover:[animation-play-state:paused]">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <Card key={index} className="flex-shrink-0 w-72 sm:w-80 bg-white/70 backdrop-blur-lg border border-white/40 hover:bg-white/80 hover:shadow-2xl hover:shadow-prussian-blue/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 overflow-hidden group">
-                <CardContent className="p-4 sm:p-6">
-                  {/* Profile section with image */}
-                  <div className="flex items-center mb-4 sm:mb-6">
-                    <div className="relative mr-4">
-                      <img 
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-white/50 group-hover:border-prussian-blue/30 transition-all duration-300"
-                      />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.name}</h4>
-                        <div className="flex space-x-1">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
+              <div key={index} className="testimonial-card-container flex-shrink-0 w-72 sm:w-80">
+                <div className="testimonial-card-inner bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl overflow-hidden relative group">
+                  {/* Animated background gradient */}
+                  <div className="testimonial-gradient-bg absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  {/* Floating orbs */}
+                  <div className="testimonial-orb testimonial-orb-1 absolute w-20 h-20 rounded-full opacity-0 group-hover:opacity-30 transition-all duration-1000"></div>
+                  <div className="testimonial-orb testimonial-orb-2 absolute w-16 h-16 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-1000 delay-200"></div>
+                  
+                  {/* Shimmer effect */}
+                  <div className="testimonial-shimmer absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                  
+                  <CardContent className="p-4 sm:p-6 relative z-10">
+                    {/* Profile section with enhanced image */}
+                    <div className="flex items-center mb-4 sm:mb-6">
+                      <div className="relative mr-4 testimonial-avatar-container">
+                        <div className="testimonial-avatar-ring absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                        <img 
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-white/50 group-hover:border-white/80 transition-all duration-500 relative z-10 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/20 to-transparent opacity-50 group-hover:opacity-20 transition-opacity duration-300"></div>
                       </div>
-                      <p className="text-xs sm:text-sm text-gray-600">{testimonial.condition}</p>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-semibold text-gray-900 text-sm sm:text-base group-hover:text-white transition-colors duration-300">{testimonial.name}</h4>
+                          <div className="flex space-x-1">
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                              <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-yellow-400 text-yellow-400 group-hover:fill-yellow-300 group-hover:text-yellow-300 transition-all duration-300 group-hover:scale-110" style={{ animationDelay: `${i * 100}ms` }} />
+                            ))}
+                          </div>
+                        </div>
+                        <p className="text-xs sm:text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300">{testimonial.condition}</p>
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Quote */}
-                  <div className="relative mb-4 sm:mb-6">
-                    <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-prussian-blue/30 mb-2" />
-                    <p className="text-gray-700 leading-relaxed italic text-sm sm:text-base group-hover:text-gray-800 transition-colors duration-300">
-                      "{testimonial.text}"
-                    </p>
-                  </div>
-                  
-                  {/* Timeline badge */}
-                  <div className="flex justify-end">
-                    <div className="bg-gradient-to-r from-green-100 to-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm border border-green-300/30 group-hover:from-green-200 group-hover:to-green-300 transition-all duration-300">
-                      {testimonial.months}
+                    
+                    {/* Enhanced Quote */}
+                    <div className="relative mb-4 sm:mb-6">
+                      <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-prussian-blue/30 group-hover:text-white/50 mb-2 transition-all duration-300 group-hover:scale-110" />
+                      <p className="text-gray-700 group-hover:text-white leading-relaxed italic text-sm sm:text-base transition-all duration-300 group-hover:scale-[1.02]">
+                        "{testimonial.text}"
+                      </p>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    
+                    {/* Enhanced Timeline badge */}
+                    <div className="flex justify-end">
+                      <div className="testimonial-badge bg-gradient-to-r from-green-100 to-green-200 group-hover:from-emerald-400 group-hover:to-teal-400 text-green-800 group-hover:text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm border border-green-300/30 group-hover:border-white/30 transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg">
+                        {testimonial.months}
+                      </div>
+                    </div>
+                  </CardContent>
+                </div>
+              </div>
             ))}
           </div>
         </div>
