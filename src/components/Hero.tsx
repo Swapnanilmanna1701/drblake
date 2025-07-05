@@ -9,43 +9,28 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen bg-hero-gradient flex items-center justify-center relative overflow-hidden">
-      {/* Enhanced 3D Floating Health Elements */}
+      {/* Simplified floating health elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Main floating elements with enhanced 3D effects */}
-        <div className="absolute top-1/4 left-1/4 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-white/5 rounded-full blur-3xl animate-float-3d shadow-2xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-prussian-blue/10 rounded-full blur-3xl animate-float-3d-reverse shadow-2xl" style={{ animationDelay: '1s' }}></div>
+        {/* Main floating elements with reduced effects */}
+        <div className="absolute top-1/4 left-1/4 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-white/3 rounded-full blur-2xl animate-float-3d"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-prussian-blue/5 rounded-full blur-2xl animate-float-3d-reverse" style={{ animationDelay: '1s' }}></div>
         
-        {/* Enhanced 3D Health Icons with glass morphism */}
-        <div className="absolute top-1/3 right-1/5 animate-float-3d opacity-30 hover:opacity-60 transition-opacity duration-500" style={{ animationDelay: '0.5s' }}>
-          <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 transform rotate-12 hover:rotate-0 transition-all duration-700 shadow-2xl border border-white/20 hover:scale-110 hover:shadow-3xl glossy-card">
-            <Heart className="h-8 w-8 sm:h-12 sm:w-12 text-white drop-shadow-lg" />
+        {/* Simplified health icons */}
+        <div className="absolute top-1/3 right-1/5 animate-float-3d opacity-20 hover:opacity-40 transition-opacity duration-500" style={{ animationDelay: '0.5s' }}>
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 transform rotate-12 hover:rotate-0 transition-all duration-500 border border-white/10">
+            <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-white/80" />
           </div>
         </div>
         
-        <div className="absolute bottom-1/3 left-1/6 animate-float-3d-reverse opacity-30 hover:opacity-60 transition-opacity duration-500" style={{ animationDelay: '1.5s' }}>
-          <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 transform -rotate-12 hover:rotate-0 transition-all duration-700 shadow-2xl border border-white/20 hover:scale-110 hover:shadow-3xl glossy-card">
-            <Brain className="h-8 w-8 sm:h-12 sm:w-12 text-white drop-shadow-lg" />
-          </div>
-        </div>
-        
-        <div className="absolute top-1/2 left-1/12 animate-float-3d opacity-30 hover:opacity-60 transition-opacity duration-500" style={{ animationDelay: '2s' }}>
-          <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-5 transform rotate-45 hover:rotate-0 transition-all duration-700 shadow-2xl border border-white/20 hover:scale-110 hover:shadow-3xl glossy-card">
-            <Activity className="h-6 w-6 sm:h-10 sm:w-10 text-white drop-shadow-lg" />
-          </div>
-        </div>
-        
-        {/* Enhanced DNA-like helix with 3D effect */}
-        <div className="absolute top-1/4 right-1/3 opacity-20 animate-dna-helix">
-          <div className="w-3 h-32 sm:h-48 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-400 to-transparent rounded-full animate-float-3d shadow-lg"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-purple-400 to-transparent rounded-full animate-float-3d-reverse shadow-lg" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/3 left-1/6 animate-float-3d-reverse opacity-20 hover:opacity-40 transition-opacity duration-500" style={{ animationDelay: '1.5s' }}>
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 transform -rotate-12 hover:rotate-0 transition-all duration-500 border border-white/10">
+            <Brain className="h-6 w-6 sm:h-8 sm:w-8 text-white/80" />
           </div>
         </div>
 
         {/* Additional floating particles */}
-        <div className="absolute top-3/4 right-1/6 w-4 h-4 bg-blue-400/60 rounded-full animate-float-particle blur-sm"></div>
-        <div className="absolute top-1/6 left-2/3 w-6 h-6 bg-purple-400/40 rounded-full animate-float-particle-reverse blur-sm" style={{ animationDelay: '0.8s' }}></div>
-        <div className="absolute bottom-1/6 left-1/3 w-3 h-3 bg-white/50 rounded-full animate-float-particle blur-sm" style={{ animationDelay: '1.2s' }}></div>
+        <div className="absolute top-3/4 right-1/6 w-3 h-3 bg-blue-400/40 rounded-full animate-float-particle blur-sm"></div>
+        <div className="absolute top-1/6 left-2/3 w-4 h-4 bg-purple-400/30 rounded-full animate-float-particle-reverse blur-sm" style={{ animationDelay: '0.8s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
@@ -66,7 +51,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
             <Button 
               onClick={scrollToContact}
-              className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-500 hover:scale-110 shadow-2xl hover:shadow-3xl glossy-button transform hover:-translate-y-1"
+              className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Book a Free Consultation
@@ -75,47 +60,47 @@ const Hero = () => {
             <Button 
               variant="outline"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto border-2 border-white/60 bg-white/10 backdrop-blur-lg text-white hover:bg-white hover:text-black text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-500 hover:scale-110 shadow-xl hover:shadow-2xl glossy-button transform hover:-translate-y-1"
+              className="w-full sm:w-auto border-2 border-white/40 bg-white/5 backdrop-blur-md text-white hover:bg-white hover:text-black text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Learn More
             </Button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center px-4">
-            <div className="hero-stat-card group">
-              <div className="hero-stat-inner">
-                <div className="hero-stat-front">
-                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2 drop-shadow-lg">8+</div>
-                  <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Years Experience</div>
+            <div className="hero-stat-card-minimal group">
+              <div className="hero-stat-inner-minimal">
+                <div className="hero-stat-front-minimal">
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">8+</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Years Experience</div>
                 </div>
-                <div className="hero-stat-back">
-                  <div className="text-white font-semibold mb-2">Professional Excellence</div>
+                <div className="hero-stat-back-minimal">
+                  <div className="text-white font-semibold mb-1">Professional Excellence</div>
                   <div className="text-gray-300 text-xs">Dedicated to mental health</div>
                 </div>
               </div>
             </div>
             
-            <div className="hero-stat-card group">
-              <div className="hero-stat-inner">
-                <div className="hero-stat-front">
-                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2 drop-shadow-lg">500+</div>
-                  <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Client Sessions</div>
+            <div className="hero-stat-card-minimal group">
+              <div className="hero-stat-inner-minimal">
+                <div className="hero-stat-front-minimal">
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">500+</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Client Sessions</div>
                 </div>
-                <div className="hero-stat-back">
-                  <div className="text-white font-semibold mb-2">Proven Results</div>
+                <div className="hero-stat-back-minimal">
+                  <div className="text-white font-semibold mb-1">Proven Results</div>
                   <div className="text-gray-300 text-xs">Transforming lives daily</div>
                 </div>
               </div>
             </div>
             
-            <div className="hero-stat-card group">
-              <div className="hero-stat-inner">
-                <div className="hero-stat-front">
-                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-pink-400 to-red-500 bg-clip-text text-transparent mb-2 drop-shadow-lg">100%</div>
-                  <div className="text-gray-300 text-sm sm:text-base drop-shadow-md">Confidential</div>
+            <div className="hero-stat-card-minimal group">
+              <div className="hero-stat-inner-minimal">
+                <div className="hero-stat-front-minimal">
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-pink-400 to-red-500 bg-clip-text text-transparent mb-2">100%</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Confidential</div>
                 </div>
-                <div className="hero-stat-back">
-                  <div className="text-white font-semibold mb-2">Complete Privacy</div>
+                <div className="hero-stat-back-minimal">
+                  <div className="text-white font-semibold mb-1">Complete Privacy</div>
                   <div className="text-gray-300 text-xs">Your trust is sacred</div>
                 </div>
               </div>

@@ -127,6 +127,84 @@ All colors MUST be HSL.
   background: #002642;
 }
 
+/* Minimal Hero Section Card Animations */
+@layer utilities {
+  .hero-stat-card-minimal {
+    perspective: 1000px;
+    height: 120px;
+    position: relative;
+  }
+
+  .hero-stat-inner-minimal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-stat-card-minimal:hover .hero-stat-inner-minimal {
+    transform: rotateY(180deg) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-stat-front-minimal,
+  .hero-stat-back-minimal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .hero-stat-back-minimal {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  }
+
+  /* Gradient Pulse Animation */
+  .animate-gradient-pulse {
+    background-size: 300% 300%;
+    animation: gradient-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes gradient-pulse {
+    0%, 100% {
+      background-position: 0% 50%;
+      filter: brightness(1) saturate(1);
+    }
+    25% {
+      background-position: 25% 50%;
+      filter: brightness(1.2) saturate(1.3);
+    }
+    50% {
+      background-position: 100% 50%;
+      filter: brightness(1.5) saturate(1.5);
+    }
+    75% {
+      background-position: 75% 50%;
+      filter: brightness(1.2) saturate(1.3);
+    }
+  }
+
+  .bg-300\% {
+    background-size: 300% 300%;
+  }
+}
+
 /* Enhanced Glossy Effects */
 @layer utilities {
   .navbar-glass {
