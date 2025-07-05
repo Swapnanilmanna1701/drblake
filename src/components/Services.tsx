@@ -1,5 +1,5 @@
 
-import { Heart, Users, Shield, DollarSign } from 'lucide-react';
+import { Heart, Users, Shield, DollarSign, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
 const Services = () => {
@@ -48,62 +48,113 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
-            <Card key={index} className="group bg-white/10 backdrop-blur-lg border-2 border-white/20 hover:border-white/60 hover:shadow-2xl hover:shadow-prussian-blue/30 transition-all duration-700 overflow-hidden animate-fade-in transform hover:scale-110 hover:-translate-y-4 hover:rotate-1" style={{ animationDelay: `${index * 0.2}s` }}>
-              <div className="relative h-48 sm:h-56 overflow-hidden">
-                <img 
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-125 group-hover:rotate-2 transition-all duration-700 group-hover:brightness-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/40 group-hover:via-black/10 transition-all duration-700"></div>
-                <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm p-3 rounded-full shadow-lg border border-white/30 group-hover:bg-white/40 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                  <service.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white group-hover:text-prussian-blue transition-colors duration-300" />
-                </div>
-                <div className="absolute bottom-4 right-4 bg-green-500/20 backdrop-blur-sm border border-green-400/30 px-3 py-1 rounded-full group-hover:bg-green-500/40 group-hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center space-x-1">
-                    <DollarSign className="h-3 w-3 sm:h-4 sm:w-4 text-green-400 group-hover:animate-bounce" />
-                    <span className="text-xs sm:text-sm font-semibold text-green-300">{service.price}</span>
+            <div key={index} className="group relative animate-fade-in modern-card" style={{ animationDelay: `${index * 0.2}s` }}>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-glow"></div>
+              <Card className="relative bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden h-full hover:border-transparent transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/25">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative h-48 sm:h-56 overflow-hidden rounded-t-2xl">
+                  <img 
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+                  
+                  {/* Floating icon */}
+                  <div className="absolute top-4 left-4 bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm p-3 rounded-full border border-white/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 modern-icon-glow">
+                    <service.icon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300 group-hover:text-white transition-colors duration-300" />
                   </div>
+                  
+                  {/* Price badge */}
+                  <div className="absolute bottom-4 right-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-400/30 px-3 py-1 rounded-full group-hover:scale-105 transition-all duration-300">
+                    <div className="flex items-center space-x-1">
+                      <DollarSign className="h-3 w-3 sm:h-4 sm:w-4 text-green-400" />
+                      <span className="text-xs sm:text-sm font-semibold text-green-300">{service.price}</span>
+                    </div>
+                  </div>
+                  
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-              </div>
-              
-              <CardHeader className="pb-2 sm:pb-4 group-hover:pb-6 transition-all duration-300">
-                <CardTitle className="text-lg sm:text-xl font-bold text-white group-hover:text-gray-100 group-hover:scale-105 transition-all duration-300">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              
-              <CardContent className="pt-0 group-hover:pt-2 transition-all duration-300">
-                <CardDescription className="text-gray-300 leading-relaxed text-sm sm:text-base group-hover:text-gray-100 group-hover:scale-105 transition-all duration-300">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+                
+                <CardHeader className="relative z-10 pb-2 sm:pb-4">
+                  <CardTitle className="text-lg sm:text-xl font-bold text-white group-hover:text-blue-200 transition-colors duration-300">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                
+                <CardContent className="relative z-10 pt-0">
+                  <CardDescription className="text-gray-300 leading-relaxed text-sm sm:text-base group-hover:text-gray-200 transition-colors duration-300">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+                
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-in-out"></div>
+              </Card>
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-8 sm:mt-12">
-          <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto border-2 border-white/20 hover:border-white/40 transition-all duration-500 mx-4 group hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-prussian-blue/30 overflow-hidden">
-            {/* Animated border effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-prussian-blue via-white to-prussian-blue animate-scroll"></div>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-prussian-blue via-white to-prussian-blue animate-scroll" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-prussian-blue via-white to-prussian-blue animate-scroll" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute right-0 top-0 w-1 h-full bg-gradient-to-b from-prussian-blue via-white to-prussian-blue animate-scroll" style={{ animationDelay: '1.5s' }}></div>
-            </div>
-            
-            {/* Glowing effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-prussian-blue/20 via-transparent to-prussian-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-glow"></div>
-            
-            <div className="relative z-10">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 group-hover:text-gray-100 group-hover:scale-105 transition-all duration-300">Insurance & Payment</h3>
-              <p className="text-gray-300 mb-4 text-sm sm:text-base group-hover:text-gray-100 group-hover:scale-105 transition-all duration-300">
-                While I don't accept insurance directly, I provide superbills for easy self-submission to your insurance provider.
-              </p>
-              <p className="text-gray-200 font-semibold text-sm sm:text-base group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                Both in-person and virtual sessions available
-              </p>
+        {/* Enhanced Insurance & Payment Card */}
+        <div className="text-center mt-12 sm:mt-16">
+          <div className="relative max-w-4xl mx-auto mx-4">
+            {/* Prominent card with enhanced styling */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 sm:p-12 border border-slate-700/50 backdrop-blur-xl insurance-card-hover">
+                {/* Background pattern */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-transparent rounded-3xl"></div>
+                
+                {/* Decorative elements */}
+                <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                  <Sparkles className="h-8 w-8 text-blue-400 animate-pulse" />
+                </div>
+                <div className="absolute bottom-6 left-6 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                  <DollarSign className="h-12 w-12 text-green-400 animate-bounce-slow" />
+                </div>
+                
+                <div className="relative z-10 text-center">
+                  <div className="flex justify-center mb-6">
+                    <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <DollarSign className="h-8 w-8 text-white" />
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent mb-6">
+                    Insurance & Payment Options
+                  </h3>
+                  
+                  <div className="space-y-4 mb-6">
+                    <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                      While I don't accept insurance directly, I provide detailed superbills for easy self-submission to your insurance provider for potential reimbursement.
+                    </p>
+                    <p className="text-blue-200 font-semibold text-base sm:text-lg">
+                      ✨ Both in-person and virtual sessions available
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-wrap justify-center gap-4 mt-8">
+                    <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-400/30 px-4 py-2 rounded-full">
+                      <span className="text-green-300 font-medium">Flexible Payment Plans</span>
+                    </div>
+                    <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 px-4 py-2 rounded-full">
+                      <span className="text-blue-300 font-medium">HSA/FSA Accepted</span>
+                    </div>
+                    <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30 px-4 py-2 rounded-full">
+                      <span className="text-purple-300 font-medium">Superbill Provided</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Subtle floating particles */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
+                  <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400/30 rounded-full animate-float-particle"></div>
+                  <div className="absolute top-3/4 right-1/3 w-3 h-3 bg-purple-400/30 rounded-full animate-float-particle-reverse" style={{ animationDelay: '1s' }}></div>
+                  <div className="absolute bottom-1/4 left-2/3 w-2 h-2 bg-indigo-400/30 rounded-full animate-float-particle" style={{ animationDelay: '2s' }}></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

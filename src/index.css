@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -218,5 +217,132 @@ All colors MUST be HSL.
 
   .-rotate-y-12 {
     transform: rotateY(-12deg);
+  }
+}
+
+/* Enhanced Modern Card Animations */
+@layer utilities {
+  .modern-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .modern-card:hover {
+    transform: translateY(-8px) rotateX(5deg) rotateY(2deg);
+  }
+
+  .modern-icon-glow {
+    position: relative;
+  }
+
+  .modern-icon-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+    filter: blur(8px);
+  }
+
+  .modern-icon-glow:hover::before {
+    opacity: 0.7;
+  }
+
+  .insurance-card-hover {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .insurance-card-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.8s;
+  }
+
+  .insurance-card-hover:hover::before {
+    left: 100%;
+  }
+
+  .insurance-card-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  /* Card Tilt Effect */
+  .modern-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modern-card:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-10px);
+  }
+
+  /* Glow Animation */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      filter: blur(1px);
+    }
+    to {
+      filter: blur(2px);
+    }
+  }
+
+  /* Enhanced 3D Transform Utilities */
+  .transform-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Card Stack Effect */
+  .card-stack {
+    position: relative;
+  }
+
+  .card-stack::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .card-stack:hover::before {
+    opacity: 1;
+  }
+
+  /* Magnetic Hover Effect */
+  .magnetic-hover {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .magnetic-hover:hover {
+    transform: scale(1.05) translateY(-2px);
   }
 }
