@@ -106,7 +106,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Information */}
             <div className="animate-slide-in">
-              <div className="bg-gradient-to-br from-prussian-blue to-black rounded-3xl p-6 sm:p-8 text-white h-full">
+              <div className="bg-gradient-to-br from-prussian-blue to-black rounded-3xl p-6 sm:p-8 text-white h-full transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-prussian-blue/30">
                 <h3 className="text-xl sm:text-2xl font-bold mb-8">Contact Information</h3>
                 
                 <div className="space-y-6">
@@ -163,7 +163,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -174,7 +174,7 @@ const Contact = () => {
                     <Input
                       value={formData.name}
                       onChange={(e) => handleChange('name', e.target.value)}
-                      className={`${errors.name ? 'border-red-500' : ''}`}
+                      className={`shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-300/60 focus:shadow-xl focus:shadow-blue-200/60 transition-all duration-300 ${errors.name ? 'border-red-500 shadow-red-200/50' : ''}`}
                       placeholder="Your full name"
                     />
                     {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
@@ -187,7 +187,7 @@ const Contact = () => {
                     <Input
                       value={formData.phone}
                       onChange={(e) => handleChange('phone', e.target.value)}
-                      className={`${errors.phone ? 'border-red-500' : ''}`}
+                      className={`shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-300/60 focus:shadow-xl focus:shadow-blue-200/60 transition-all duration-300 ${errors.phone ? 'border-red-500 shadow-red-200/50' : ''}`}
                       placeholder="(323) 555-0123"
                     />
                     {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
@@ -201,7 +201,7 @@ const Contact = () => {
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
-                      className={`${errors.email ? 'border-red-500' : ''}`}
+                      className={`shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-300/60 focus:shadow-xl focus:shadow-blue-200/60 transition-all duration-300 ${errors.email ? 'border-red-500 shadow-red-200/50' : ''}`}
                       placeholder="your.email@example.com"
                     />
                     {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -214,7 +214,7 @@ const Contact = () => {
                     <Textarea
                       value={formData.reason}
                       onChange={(e) => handleChange('reason', e.target.value)}
-                      className={`${errors.reason ? 'border-red-500' : ''} min-h-[100px]`}
+                      className={`shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-300/60 focus:shadow-xl focus:shadow-blue-200/60 transition-all duration-300 min-h-[100px] ${errors.reason ? 'border-red-500 shadow-red-200/50' : ''}`}
                       placeholder="Tell me a bit about what you'd like to work on..."
                     />
                     {errors.reason && <p className="text-red-500 text-sm mt-1">{errors.reason}</p>}
@@ -227,7 +227,7 @@ const Contact = () => {
                     <Input
                       value={formData.preferredTime}
                       onChange={(e) => handleChange('preferredTime', e.target.value)}
-                      className={`${errors.preferredTime ? 'border-red-500' : ''}`}
+                      className={`shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-300/60 focus:shadow-xl focus:shadow-blue-200/60 transition-all duration-300 ${errors.preferredTime ? 'border-red-500 shadow-red-200/50' : ''}`}
                       placeholder="e.g., weekday mornings, evenings after 6pm"
                     />
                     {errors.preferredTime && <p className="text-red-500 text-sm mt-1">{errors.preferredTime}</p>}
@@ -237,7 +237,7 @@ const Contact = () => {
                     <Checkbox
                       checked={formData.agreeToContact}
                       onCheckedChange={(checked) => handleChange('agreeToContact', checked as boolean)}
-                      className={`${errors.agreeToContact ? 'border-red-500' : ''} mt-1 flex-shrink-0`}
+                      className={`${errors.agreeToContact ? 'border-red-500' : ''} mt-1 flex-shrink-0 shadow-md shadow-gray-200/40`}
                     />
                     <div>
                       <label className="text-sm text-gray-700 leading-relaxed">
@@ -250,7 +250,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-black to-prussian-blue hover:from-gray-800 hover:to-prussian-blue/90 text-white py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+                    className="w-full bg-gradient-to-r from-black to-prussian-blue hover:from-gray-800 hover:to-prussian-blue/90 text-white py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-xl shadow-gray-300/40 hover:shadow-2xl hover:shadow-prussian-blue/30 glossy-button"
                   >
                     {isSubmitting ? (
                       "Sending..."
@@ -263,7 +263,7 @@ const Contact = () => {
                   </Button>
                 </form>
 
-                <div className="mt-6 p-4 bg-gray-50 rounded-xl">
+                <div className="mt-6 p-4 bg-gray-50 rounded-xl shadow-inner">
                   <p className="text-sm text-gray-600 text-center">
                     🔒 Your information is secure and confidential. 
                     Dr. Blake will respond within 24 hours during business days.

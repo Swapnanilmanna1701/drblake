@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -80,6 +81,9 @@ export default {
 			transformStyle: {
 				'preserve-3d': 'preserve-3d',
 			},
+			boxShadow: {
+				'3xl': '0 35px 60px -12px rgba(0, 0, 0, 0.25)',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -109,6 +113,66 @@ export default {
 					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
 					'50%': { transform: 'translateY(-10px) rotate(5deg)' }
 				},
+				'float-3d': {
+					'0%, 100%': { 
+						transform: 'translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg)',
+						filter: 'blur(0px)'
+					},
+					'25%': { 
+						transform: 'translateY(-8px) translateX(4px) rotateX(5deg) rotateY(5deg)',
+						filter: 'blur(0.5px)'
+					},
+					'50%': { 
+						transform: 'translateY(-15px) translateX(0px) rotateX(0deg) rotateY(10deg)',
+						filter: 'blur(1px)'
+					},
+					'75%': { 
+						transform: 'translateY(-8px) translateX(-4px) rotateX(-5deg) rotateY(5deg)',
+						filter: 'blur(0.5px)'
+					}
+				},
+				'float-3d-reverse': {
+					'0%, 100%': { 
+						transform: 'translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg)',
+						filter: 'blur(0px)'
+					},
+					'25%': { 
+						transform: 'translateY(-8px) translateX(-4px) rotateX(-5deg) rotateY(-5deg)',
+						filter: 'blur(0.5px)'
+					},
+					'50%': { 
+						transform: 'translateY(-15px) translateX(0px) rotateX(0deg) rotateY(-10deg)',
+						filter: 'blur(1px)'
+					},
+					'75%': { 
+						transform: 'translateY(-8px) translateX(4px) rotateX(5deg) rotateY(-5deg)',
+						filter: 'blur(0.5px)'
+					}
+				},
+				'float-particle': {
+					'0%, 100%': { transform: 'translateY(0px) scale(1)', opacity: '0.6' },
+					'50%': { transform: 'translateY(-20px) scale(1.2)', opacity: '1' }
+				},
+				'float-particle-reverse': {
+					'0%, 100%': { transform: 'translateY(0px) scale(1)', opacity: '0.6' },
+					'50%': { transform: 'translateY(20px) scale(0.8)', opacity: '0.3' }
+				},
+				'dna-helix': {
+					'0%': { transform: 'rotateY(0deg) rotateX(0deg)' },
+					'100%': { transform: 'rotateY(360deg) rotateX(360deg)' }
+				},
+				'bounce-3d': {
+					'0%, 100%': { transform: 'translateY(0) rotateX(0deg)' },
+					'50%': { transform: 'translateY(-10px) rotateX(180deg)' }
+				},
+				'gradient-text': {
+					'0%, 100%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' }
+				},
+				shimmer: {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
+				},
 				scroll: {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(calc(-100% - 2rem))' }
@@ -136,6 +200,14 @@ export default {
 				'fade-in': 'fadeIn 0.6s ease-out',
 				'slide-in': 'slideIn 0.8s ease-out',
 				'float': 'float 6s ease-in-out infinite',
+				'float-3d': 'float-3d 8s ease-in-out infinite',
+				'float-3d-reverse': 'float-3d-reverse 8s ease-in-out infinite',
+				'float-particle': 'float-particle 4s ease-in-out infinite',
+				'float-particle-reverse': 'float-particle-reverse 4s ease-in-out infinite',
+				'dna-helix': 'dna-helix 10s linear infinite',
+				'bounce-3d': 'bounce-3d 2s ease-in-out infinite',
+				'gradient-text': 'gradient-text 3s ease-in-out infinite',
+				'shimmer': 'shimmer 2s ease-in-out infinite',
 				'scroll': 'scroll 30s linear infinite',
 				'pulse': 'pulse 3s ease-in-out infinite',
 				'bounce-slow': 'bounce-slow 3s ease-in-out infinite',
